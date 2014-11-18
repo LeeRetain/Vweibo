@@ -14,6 +14,9 @@
 #import "NSString+URLEncoding.h"
 #import "RegexKitLite.h"
 #import "UIUtils.h"
+#import "UIView+Addtions.h"
+#import "UserViewController.h"
+#import "WebViewController.h"
 
 @implementation WeiboView
 
@@ -87,10 +90,8 @@
     //获取微博文本
     NSString *text = _weiboModel.text;
 //    NSLog(@"%@",text);
-    
     //解析、替换超链接
     text = [UIUtils parseLink:text];
-    
       [_parseText appendString:text];
 //    NSLog(@"_parseText %@", _parseText);
 }
@@ -299,10 +300,24 @@
     if ([absoluteString hasPrefix:@"user"]) {
         NSString *strUrl = [url host];
         strUrl = [strUrl URLDecodedString];
-        NSLog(@"user-->>>%@",strUrl);
+        //判断字符串中是否有 "@" 字符
+        if ([strUrl hasPrefix:@"@"]) {
+            //截取字符串
+            strUrl = [strUrl substringFromIndex:1];
+        }
+//        NSLog(@"user-->>>%@",strUrl);
+        //转到个人信息
+        UserViewController *viewCtr = [[UserViewController alloc] init];
+        viewCtr.userName = strUrl;
+        [self.viewController.navigationController pushViewController:viewCtr animated:YES];
+        
     //判断是否是 url 然后获取url
     } else  if ([absoluteString hasPrefix:@"http"]) {
-        NSLog(@"url-->>>%@",[absoluteString URLDecodedString]);
+        NSString *url = [absoluteString URLDecodedString];
+//        NSLog(@"url-->>>%@",[absoluteString URLDecodedString]);
+        WebViewController *webViewController = [[WebViewController alloc] initWithURL:url];
+        [self.viewController.navigationController pushViewController:webViewController animated:YES];
+        
     //判断是否是话题，获取话题链接
     } else if ([absoluteString hasPrefix:@"topic"]) {
         NSString *strUrl = [url host];

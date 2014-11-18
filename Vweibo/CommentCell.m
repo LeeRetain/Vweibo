@@ -11,6 +11,9 @@
 #import "CONSTS.h"
 #import "UIImageView+WebCache.h"
 #import "UIUtils.h"
+#import "NSString+URLEncoding.h"
+#import "UserViewController.h"
+#import "UIView+Addtions.h"
 
 @implementation CommentCell
 
@@ -26,7 +29,7 @@
 - (void)awakeFromNib {
     // Initialization code
     //用户头像的tag值 100
-     _userImageView = (UIImageView *)[self viewWithTag:100];
+     _userImageView = (WXImageView *)[self viewWithTag:100];
     //用户昵称的tag值 101
     _nickLabel = (UILabel *)[self viewWithTag:101];
     //评论时间的tag值 102
@@ -56,6 +59,12 @@
     _userImageView.layer.masksToBounds = YES;
     //设置头像
     [_userImageView setImageWithURL:[NSURL URLWithString:userImageURL]];
+    
+    //------------------------Vean 2014-11-18 deprecated-----------------------------------
+//    _userImageView.userInteractionEnabled = YES;
+//    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+//    [_userImageView  addGestureRecognizer:singleTap];
+    
     //设置昵称
     _nickLabel.text = self.commentModel.user.screen_name;
     //设置发布时间格式
@@ -86,7 +95,56 @@
 
 #pragma mark - RTLabel Delegate
 - (void)rtLabel:(id)rtLabel didSelectLinkWithURL:(NSURL*)url {
+    //获取微博文本中的超链接
+    NSString *absoluteString = [url absoluteString];
+    //判断是否是user信息，然后获取user
+    if ([absoluteString hasPrefix:@"user"]) {
+        NSString *strUrl = [url host];
+        strUrl = [strUrl URLDecodedString];
+        //截取字符串
+        strUrl = [strUrl substringFromIndex:1];
+        NSLog(@"user-->>>%@",strUrl);
+        //转到个人信息
+        UserViewController *viewCtr = [[UserViewController alloc] init];
+        viewCtr.userName = strUrl;
+        [self.viewController.navigationController pushViewController:viewCtr animated:YES];
+        
+        //判断是否是 url 然后获取url
+    } else  if ([absoluteString hasPrefix:@"http"]) {
+        NSLog(@"url-->>>%@",[absoluteString URLDecodedString]);
+        //判断是否是话题，获取话题链接
+    } else if ([absoluteString hasPrefix:@"topic"]) {
+        NSString *strUrl = [url host];
+        strUrl = [strUrl URLDecodedString];
+        strUrl = [strUrl substringFromIndex:0];
+        NSLog(@"topic-->>>%@",strUrl);
+    }
     
 }
+
+//touch Gesture push
+- (void)setCommentModel:(CommentModel *)commentModel {
+    if (_commentModel != commentModel) {
+        _commentModel = commentModel;
+    }
+    //防止循环引用
+    __block CommentCell *this = self;
+    _userImageView.touchBlock = ^{
+        NSString *userName = this.commentModel.user.screen_name;
+        UserViewController *viewCtr = [[UserViewController alloc] init];
+        viewCtr.userName = userName;
+        [this.viewController.navigationController pushViewController:viewCtr animated:YES];
+    };
+}
+
+#pragma mark - Actions
+//------------------------Vean 2014-11-18 deprecated-----------------------------------
+//- (void) handleSingleTap:(UITapGestureRecognizer *) gestureRecognizer {
+//    NSString *userName = self.commentModel.user.screen_name;
+//    UserViewController *viewCtr = [[UserViewController alloc] init];
+//    viewCtr.userName = userName;
+//    [self.viewController.navigationController pushViewController:viewCtr animated:YES];
+//    NSLog(@"%@", self.viewController);
+//}
 
 @end

@@ -12,6 +12,8 @@
 #import "CONSTS.h"
 #import "UIUtils.h"
 #import "RegexKitLite.h"
+#import "UserViewController.h"
+#import "UIView+Addtions.h"
 
 @implementation WeiboCell
 
@@ -36,7 +38,7 @@
 //初始化子视图
 - (void) _initView {
     //用户头像
-    _userImage = [[UIImageView alloc] initWithFrame:CGRectZero];
+    _userImage = [[WXImageView alloc] initWithFrame:CGRectZero];
     _userImage.backgroundColor = [UIColor clearColor];
     _userImage.layer.cornerRadius = 5;
     _userImage.layer.borderWidth = 0.5;
@@ -90,6 +92,10 @@
     _userImage.frame = CGRectMake(5, 5, 35, 35);
     NSString *userImageURL =  _weiboModel.userModel.profile_image_url;
     [_userImage setImageWithURL:[NSURL URLWithString:userImageURL]];
+    //------------------------Vean 2014-11-18 deprecated-----------------------------------
+//    _userImage.userInteractionEnabled = YES;
+//     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+//    [_userImage  addGestureRecognizer:singleTap];
     
     //------------------------------用户昵称_nickLabel-------------------------
     _nickLabel.frame = CGRectMake(50, 5, 200, 20);
@@ -99,7 +105,8 @@
     _weiboView.weiboModel = _weiboModel;
     float height = [WeiboView getWeiboViewHeight:_weiboModel isRepost:NO isDetail:NO];
     _weiboView.frame = CGRectMake(50, _nickLabel.bottom +10, kWeibo_Width_List, height);
-    
+    //使微博WeiboView调用微博重新布局
+//    [_weiboView setNeedsLayout];
     //------------------------------发布时间_creatLabel-------------------------
 
     //源日期字符串：Tue May 31 17:46:13 +0800 2014
@@ -140,12 +147,37 @@
     if (sourceArray.count > 0) {
         NSString *sourceRet = [sourceArray objectAtIndex:0];
         NSRange range;
-        range.location = 1;//截取位置开始
-        range.length  = sourceRet.length - 2;//截取长度
+        range.location = 1; //截取位置开始
+        range.length  = sourceRet.length - 2; //截取长度
         NSString *sourceText = [sourceRet substringWithRange:range];
         return sourceText;
     }
     return @"新浪微博";
 }
+
+//touch Gesture push
+- (void) setWeiboModel:(WeiboModel *)weiboModel {
+    if (_weiboModel != weiboModel) {
+        _weiboModel = weiboModel;
+    }
+    //防止循环引用
+    __block WeiboCell *this = self;
+    _userImage.touchBlock = ^ {
+        NSString *userName = this.weiboModel.userModel.screen_name;
+        UserViewController *viewCtr = [[UserViewController alloc] init];
+        viewCtr.userName = userName;
+        [this.viewController.navigationController pushViewController:viewCtr animated:YES];
+    };
+}
+
+#pragma mark - Actions
+//------------------------Vean 2014-11-18 deprecated-----------------------------------
+//- (void) handleSingleTap:(UITapGestureRecognizer *) gestureRecognizer {
+//    NSString *userName = self.weiboModel.userModel.screen_name;
+//    UserViewController *viewCtr = [[UserViewController alloc] init];
+//    viewCtr.userName = userName;
+//    [self.viewController.navigationController pushViewController:viewCtr animated:YES];
+//    NSLog(@"%@", self.viewController);
+//}
 
 @end

@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "RTLabel.h"
 #import "CommentModel.h"
+#import "WXImageView.h"
 
 @interface CommentCell : UITableViewCell <RTLabelDelegate>
 
-@property(retain, nonatomic) UIImageView *userImageView;
+@property(retain, nonatomic) WXImageView *userImageView;
 @property(retain, nonatomic) UILabel *nickLabel;
 @property(retain, nonatomic) UILabel *timeLabel;
 @property(retain, nonatomic) RTLabel *contentLabel;
