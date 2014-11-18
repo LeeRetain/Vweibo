@@ -9,5 +9,6 @@
 #import "UserModel.h"
 
 @implementation UserModel
+@synthesize description;
 
 @end

@@ -21,6 +21,11 @@
     return self;
 }
 
+//使用xib创建
+- (void)awakeFromNib {
+    [self initView];
+}
+
 //初始化子视图
 - (void) initView {
     _refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.bounds.size.height, self.frame.size.width, self.bounds.size.height)];
@@ -130,15 +135,19 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
     
-    float offset = scrollView.contentOffset.y; //scrollView的偏移量
-    float contentHeight = scrollView.contentSize.height; //content的高度
-    
-    float sub = offset - contentHeight;
-    if (scrollView.height - sub > 20) {
-        [self _startLoadMore];
+    if ([scrollView isKindOfClass:[UITableView class]]) {
+        NSLog(@"------是列表---");
+    } else {
+        NSLog(@"------是滚动试图----");
+        float offset = scrollView.contentOffset.y; //scrollView的偏移量
+        float contentHeight = scrollView.contentSize.height; //content的高度
         
-        if ([self.eventDelegate respondsToSelector:@selector(pullUp:)]) {
-            [self.eventDelegate pullUp:self];
+        float sub = offset - contentHeight;
+        if (scrollView.height - sub > 20) {
+            [self _startLoadMore];
+            if ([self.eventDelegate respondsToSelector:@selector(pullUp:)]) {
+                [self.eventDelegate pullUp:self];
+            }
         }
     }
 }

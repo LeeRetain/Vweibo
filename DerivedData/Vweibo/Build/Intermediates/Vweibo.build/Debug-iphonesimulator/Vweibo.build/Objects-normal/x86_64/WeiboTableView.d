@@ -10,4 +10,5 @@ dependencies: \
   /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/WeiboView.h \
   /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/openSource/FontLabel/RTLabel.h \
   /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/ThemesImageView.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/WXImageView.h \
   /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/CONSTS.h

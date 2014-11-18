@@ -16,4 +16,15 @@ dependencies: \
   /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/CONSTS.h \
   /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/openSource/tools/NSString+URLEncoding.h \
   /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/openSource/RegexKitLite/RegexKitLite.h \
-  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/UIUtils.h
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/UIUtils.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/UIView+Addtions.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/UserViewController.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/ViewController.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/openSource/sinaweibo_ios_sdk/libWeiboSDK/WeiboSDK.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/openSource/MBProgressHUD.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/WeiboTableView.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/BaseTableView.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/openSource/EGOTableViewPullRefresh/EGORefreshTableHeaderView.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/WeiboCell.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/WXImageView.h \
+  /Users/Vean/微云同步盘/ios/Movie/Vweibo/Vweibo/WebViewController.h
