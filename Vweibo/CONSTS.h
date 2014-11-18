@@ -16,8 +16,11 @@
 #define kHomeWeiboURI @"https://api.weibo.com/2/statuses/home_timeline.json"                //微博主页的数据接口
 #define kUnreadCount @"https://rm.api.weibo.com/2/remind/unread_count.json"             //获取微博未读微博数据
 #define kComments @"https://api.weibo.com/2/comments/show.json"             //获取评论
+#define KUserInfoURI @"https://api.weibo.com/2/users/show.json"         //获取用户信息
+#define kUserWiboURI @"https://api.weibo.com/2/statuses/user_timeline.json"     //获取用户最新发表的微博列表
+#define kFriendsWeiboURI @"https://api.weibo.com/2/statuses/friends_timeline.json"          //获取微博列表
 
-#define kWbtoken @"kWbtoken"                //微博token
+#define kWbtoken @"kWbtoken"              //微博token
 
 #define kGet @"GET"           //微博请求方式
 
@@ -40,6 +43,8 @@
 #define DETAIL_FONT 19.0f               //详细微博的字体
 #define DETAIL_REPOST_FONT 18.0f                //详细转发的微博字体
 #define UPDATE_WEIBO_COUNT_FONT 16.0f    //更新微博提醒字体
+#define USERINFO_RECT_FONT 18.0f        //个人资料主标题字体
+#define USERINFO_SUB_FONT 16.0f         //个人资料副标题字体
 
 #define kWeibo_Width_List (ScreenWidth - 60)                //微博在列表中的宽度
 #define kWeibo_Width_Detail (ScreenWidth - 20)              //微博在详细页的宽度
@@ -70,4 +75,5 @@
 #define kLargeImage 2   //大图
 #define kBrowMode   @"kBrowMode"    //UserDefault key
 #define kReloadWeiboTableNotification @"kReloadWeiboTableNotification"      //Notification Key
+
 #endif
