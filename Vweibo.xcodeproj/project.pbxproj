@@ -96,10 +96,18 @@
 		131668A519D53453004D9254 /* 后退.png in Resources */ = {isa = PBXBuildFile; fileRef = 1316685519D53453004D9254 /* 后退.png */; };
 		1321C38319D153DE0015ED50 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1321C38019D153DE0015ED50 /* libWeiboSDK.a */; };
 		1321C38419D153DE0015ED50 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1321C38119D153DE0015ED50 /* WeiboSDK.bundle */; };
+		133EE21C1A087F8900ED5B58 /* UIView+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 133EE21B1A087F8900ED5B58 /* UIView+Addtions.m */; };
+		133EE2201A0886D700ED5B58 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 133EE21E1A0886D700ED5B58 /* UserViewController.m */; };
+		133EE2211A0886D700ED5B58 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133EE21F1A0886D700ED5B58 /* UserViewController.xib */; };
+		133EE2281A08A76500ED5B58 /* UserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 133EE2271A08A76500ED5B58 /* UserInfoView.m */; };
+		133EE22A1A08A77500ED5B58 /* UserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 133EE2291A08A77500ED5B58 /* UserInfoView.xib */; };
+		1358A8B41A1ADF150080DAB5 /* WXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1358A8B31A1ADF150080DAB5 /* WXImageView.m */; };
 		13830A0D19D1238E00BA9CB6 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13830A0B19D1238E00BA9CB6 /* LeftViewController.m */; };
 		13830A0E19D1238E00BA9CB6 /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13830A0C19D1238E00BA9CB6 /* LeftViewController.xib */; };
 		13830A1219D1239E00BA9CB6 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13830A1019D1239E00BA9CB6 /* RightViewController.m */; };
 		13830A1319D1239E00BA9CB6 /* RightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13830A1119D1239E00BA9CB6 /* RightViewController.xib */; };
+		138665EF1A1B6854003D47DE /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138665ED1A1B6854003D47DE /* WebViewController.m */; };
+		138665F01A1B6854003D47DE /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138665EE1A1B6854003D47DE /* WebViewController.xib */; };
 		138698A319D45F9100CD7D51 /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 138698A119D45F9100CD7D51 /* ThemesViewController.m */; };
 		138698A419D45F9100CD7D51 /* ThemesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 138698A219D45F9100CD7D51 /* ThemesViewController.xib */; };
 		1389BD8219D3E9E8000C7057 /* Skins in Resources */ = {isa = PBXBuildFile; fileRef = 1389BD8119D3E9E8000C7057 /* Skins */; };
@@ -107,11 +115,10 @@
 		1389BD8819D3EF15000C7057 /* Themes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1389BD8719D3EF15000C7057 /* Themes.plist */; };
 		1389BD8B19D3FB5F000C7057 /* ThemesButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1389BD8A19D3FB5F000C7057 /* ThemesButton.m */; };
 		1389CC6F19E5135500AD4DD9 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1389CC6E19E5135500AD4DD9 /* libicucore.dylib */; };
+		1391102F1A09C9BC00B55A67 /* RectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1391102E1A09C9BC00B55A67 /* RectButton.m */; };
 		13AC5AB11A0118DA0010816E /* BrowModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AC5AAF1A0118DA0010816E /* BrowModeViewController.m */; };
 		13AC5AB21A0118DA0010816E /* BrowModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13AC5AB01A0118DA0010816E /* BrowModeViewController.xib */; };
 		13BEFAE719EC078C00A12024 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BEFAE619EC078C00A12024 /* AudioToolbox.framework */; };
-		13BEFAEC19ED0C7200A12024 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 13BEFAE919ED0C7200A12024 /* 37x-Checkmark.png */; };
-		13BEFAED19ED0C7200A12024 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BEFAEB19ED0C7200A12024 /* MBProgressHUD.m */; };
 		13C0D5F719EE5CB4000D58B4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C0D5F519EE5CB4000D58B4 /* DetailViewController.m */; };
 		13C0D5F819EE5CB4000D58B4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13C0D5F619EE5CB4000D58B4 /* DetailViewController.xib */; };
 		13C0D5FB19EFA5BD000D58B4 /* CommentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C0D5FA19EFA5BD000D58B4 /* CommentTableView.m */; };
@@ -122,6 +129,8 @@
 		13C5970A19E6CD3300268A13 /* RegexKitLite.html in Resources */ = {isa = PBXBuildFile; fileRef = 13C5970819E6CD3300268A13 /* RegexKitLite.html */; };
 		13C5970B19E6CD3300268A13 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C5970919E6CD3300268A13 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		13C5970E19E6DDD000268A13 /* UIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1311A94219D5287F00E81044 /* UIFactory.m */; };
+		13CCBE921A15AA4D004E34B3 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 13CCBE8F1A15AA4D004E34B3 /* 37x-Checkmark.png */; };
+		13CCBE931A15AA4D004E34B3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CCBE911A15AA4D004E34B3 /* MBProgressHUD.m */; };
 		13CCCC4819D59F8200C9112A /* ThemesImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CCCC4719D59F8200C9112A /* ThemesImageView.m */; };
 		13CCCC4C19D66FDD00C9112A /* ThemesLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CCCC4B19D66FDD00C9112A /* ThemesLabel.m */; };
 		13E1A52C19D27A0400618EEB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E1A52A19D27A0400618EEB /* MainViewController.m */; };
@@ -275,12 +284,25 @@
 		1321C38019D153DE0015ED50 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
 		1321C38119D153DE0015ED50 /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
 		1321C38219D153DE0015ED50 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		133EE21A1A087F8900ED5B58 /* UIView+Addtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addtions.h"; sourceTree = "<group>"; };
+		133EE21B1A087F8900ED5B58 /* UIView+Addtions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addtions.m"; sourceTree = "<group>"; };
+		133EE21D1A0886D700ED5B58 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		133EE21E1A0886D700ED5B58 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		133EE21F1A0886D700ED5B58 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		133EE2261A08A76500ED5B58 /* UserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoView.h; sourceTree = "<group>"; };
+		133EE2271A08A76500ED5B58 /* UserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoView.m; sourceTree = "<group>"; };
+		133EE2291A08A77500ED5B58 /* UserInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoView.xib; sourceTree = "<group>"; };
+		1358A8B21A1ADF150080DAB5 /* WXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXImageView.h; sourceTree = "<group>"; };
+		1358A8B31A1ADF150080DAB5 /* WXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXImageView.m; sourceTree = "<group>"; };
 		13830A0A19D1238E00BA9CB6 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		13830A0B19D1238E00BA9CB6 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		13830A0C19D1238E00BA9CB6 /* LeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
 		13830A0F19D1239E00BA9CB6 /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
 		13830A1019D1239E00BA9CB6 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		13830A1119D1239E00BA9CB6 /* RightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightViewController.xib; sourceTree = "<group>"; };
+		138665EC1A1B6854003D47DE /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		138665ED1A1B6854003D47DE /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		138665EE1A1B6854003D47DE /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		138698A019D45F9100CD7D51 /* ThemesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemesViewController.h; sourceTree = "<group>"; };
 		138698A119D45F9100CD7D51 /* ThemesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemesViewController.m; sourceTree = "<group>"; };
 		138698A219D45F9100CD7D51 /* ThemesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemesViewController.xib; sourceTree = "<group>"; };
@@ -291,13 +313,12 @@
 		1389BD8919D3FB5F000C7057 /* ThemesButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemesButton.h; sourceTree = "<group>"; };
 		1389BD8A19D3FB5F000C7057 /* ThemesButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemesButton.m; sourceTree = "<group>"; };
 		1389CC6E19E5135500AD4DD9 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		1391102D1A09C9BC00B55A67 /* RectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectButton.h; sourceTree = "<group>"; };
+		1391102E1A09C9BC00B55A67 /* RectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectButton.m; sourceTree = "<group>"; };
 		13AC5AAE1A0118DA0010816E /* BrowModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowModeViewController.h; sourceTree = "<group>"; };
 		13AC5AAF1A0118DA0010816E /* BrowModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowModeViewController.m; sourceTree = "<group>"; };
 		13AC5AB01A0118DA0010816E /* BrowModeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowModeViewController.xib; sourceTree = "<group>"; };
 		13BEFAE619EC078C00A12024 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		13BEFAE919ED0C7200A12024 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
-		13BEFAEA19ED0C7200A12024 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		13BEFAEB19ED0C7200A12024 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		13C0D5F419EE5CB4000D58B4 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		13C0D5F519EE5CB4000D58B4 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		13C0D5F619EE5CB4000D58B4 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -313,6 +334,9 @@
 		13C5970719E6CD3300268A13 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		13C5970819E6CD3300268A13 /* RegexKitLite.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RegexKitLite.html; sourceTree = "<group>"; };
 		13C5970919E6CD3300268A13 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		13CCBE8F1A15AA4D004E34B3 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "37x-Checkmark.png"; path = "Vweibo/openSource/37x-Checkmark.png"; sourceTree = SOURCE_ROOT; };
+		13CCBE901A15AA4D004E34B3 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Vweibo/openSource/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
+		13CCBE911A15AA4D004E34B3 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Vweibo/openSource/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		13CCCC4619D59F8200C9112A /* ThemesImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemesImageView.h; sourceTree = "<group>"; };
 		13CCCC4719D59F8200C9112A /* ThemesImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemesImageView.m; sourceTree = "<group>"; };
 		13CCCC4919D66B8A00C9112A /* CONSTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CONSTS.h; sourceTree = "<group>"; };
@@ -535,6 +559,80 @@
 			path = libWeiboSDK;
 			sourceTree = "<group>";
 		};
+		133EE2221A08878F00ED5B58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13E9831219CFF32500947EE4 /* HomeViewController.h */,
+				13E9831319CFF32500947EE4 /* HomeViewController.m */,
+				13E9831419CFF32500947EE4 /* HomeViewController.xib */,
+				13830A0A19D1238E00BA9CB6 /* LeftViewController.h */,
+				13830A0B19D1238E00BA9CB6 /* LeftViewController.m */,
+				13830A0C19D1238E00BA9CB6 /* LeftViewController.xib */,
+				13830A0F19D1239E00BA9CB6 /* RightViewController.h */,
+				13830A1019D1239E00BA9CB6 /* RightViewController.m */,
+				13830A1119D1239E00BA9CB6 /* RightViewController.xib */,
+				13C0D5F419EE5CB4000D58B4 /* DetailViewController.h */,
+				13C0D5F519EE5CB4000D58B4 /* DetailViewController.m */,
+				13C0D5F619EE5CB4000D58B4 /* DetailViewController.xib */,
+				138665EC1A1B6854003D47DE /* WebViewController.h */,
+				138665ED1A1B6854003D47DE /* WebViewController.m */,
+				138665EE1A1B6854003D47DE /* WebViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		133EE2231A0887BD00ED5B58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13FB541A19D8480000DCCF19 /* WeiboCell.h */,
+				13FB541B19D8480000DCCF19 /* WeiboCell.m */,
+				13FB541D19D8481400DCCF19 /* WeiboView.h */,
+				13FB541E19D8481400DCCF19 /* WeiboView.m */,
+				1312AB8419E7A9D6001B877E /* WeiboTableView.h */,
+				1312AB8519E7A9D6001B877E /* WeiboTableView.m */,
+				13C0D5F919EFA5BD000D58B4 /* CommentTableView.h */,
+				13C0D5FA19EFA5BD000D58B4 /* CommentTableView.m */,
+				13C0D5FE19EFB02A000D58B4 /* CommentCell.h */,
+				13C0D5FF19EFB02A000D58B4 /* CommentCell.m */,
+				13C0D5FC19EFA723000D58B4 /* CommentCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		133EE2241A08A72500ED5B58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13E9832019CFF55100947EE4 /* ProfileViewController.h */,
+				13E9832119CFF55100947EE4 /* ProfileViewController.m */,
+				13E9832219CFF55100947EE4 /* ProfileViewController.xib */,
+				133EE21D1A0886D700ED5B58 /* UserViewController.h */,
+				133EE21E1A0886D700ED5B58 /* UserViewController.m */,
+				133EE21F1A0886D700ED5B58 /* UserViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		133EE2251A08A73B00ED5B58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				133EE2261A08A76500ED5B58 /* UserInfoView.h */,
+				133EE2271A08A76500ED5B58 /* UserInfoView.m */,
+				133EE2291A08A77500ED5B58 /* UserInfoView.xib */,
+				1391102D1A09C9BC00B55A67 /* RectButton.h */,
+				1391102E1A09C9BC00B55A67 /* RectButton.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1358A8B11A1ADEC90080DAB5 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				1358A8B21A1ADF150080DAB5 /* WXImageView.h */,
+				1358A8B31A1ADF150080DAB5 /* WXImageView.m */,
+			);
+			name = CommonViews;
+			sourceTree = "<group>";
+		};
 		1389BD8319D3EE94000C7057 /* ThemeManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,9 +654,9 @@
 		13BEFAE819ED0C7200A12024 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				13BEFAE919ED0C7200A12024 /* 37x-Checkmark.png */,
-				13BEFAEA19ED0C7200A12024 /* MBProgressHUD.h */,
-				13BEFAEB19ED0C7200A12024 /* MBProgressHUD.m */,
+				13CCBE8F1A15AA4D004E34B3 /* 37x-Checkmark.png */,
+				13CCBE901A15AA4D004E34B3 /* MBProgressHUD.h */,
+				13CCBE911A15AA4D004E34B3 /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
 			path = "../../../../../../Desktop/新浪微博项目代码课件/工具类和开源库/MBProgressHUD";
@@ -614,6 +712,7 @@
 				13E1A52919D27A0400618EEB /* MainViewController.h */,
 				13E1A52A19D27A0400618EEB /* MainViewController.m */,
 				13E1A52B19D27A0400618EEB /* MainViewController.xib */,
+				1358A8B11A1ADEC90080DAB5 /* CommonViews */,
 				13E9830D19CFE52300947EE4 /* Home */,
 				13E9831719CFF32F00947EE4 /* Message */,
 				13E9831D19CFF3A000947EE4 /* Profile */,
@@ -634,6 +733,7 @@
 			children = (
 				1316680519D53453004D9254 /* image */,
 				1389BD8319D3EE94000C7057 /* ThemeManager */,
+				13E982E119CFCA1400947EE4 /* openSource */,
 				1389BD8119D3E9E8000C7057 /* Skins */,
 				13E982D319CFBEE500947EE4 /* Uitils */,
 				13E982AB19CFBC5000947EE4 /* Info.plist */,
@@ -662,11 +762,12 @@
 		13E982D319CFBEE500947EE4 /* Uitils */ = {
 			isa = PBXGroup;
 			children = (
-				13E982E119CFCA1400947EE4 /* openSource */,
 				13E982D719CFC07200947EE4 /* UIUtils.h */,
 				13E982D819CFC07200947EE4 /* UIUtils.m */,
 				13E982D419CFBF5400947EE4 /* UIViewExt.h */,
 				13E982D519CFBF5400947EE4 /* UIViewExt.m */,
+				133EE21A1A087F8900ED5B58 /* UIView+Addtions.h */,
+				133EE21B1A087F8900ED5B58 /* UIView+Addtions.m */,
 				13E9830E19CFE57F00947EE4 /* CustomCatagory.h */,
 				13E9830F19CFE57F00947EE4 /* CustomCatagory.m */,
 				13E982DE19CFC26100947EE4 /* WXHLGlobalUICommon.h */,
@@ -754,29 +855,8 @@
 		13E9830D19CFE52300947EE4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				13E9831219CFF32500947EE4 /* HomeViewController.h */,
-				13E9831319CFF32500947EE4 /* HomeViewController.m */,
-				13E9831419CFF32500947EE4 /* HomeViewController.xib */,
-				13830A0A19D1238E00BA9CB6 /* LeftViewController.h */,
-				13830A0B19D1238E00BA9CB6 /* LeftViewController.m */,
-				13830A0C19D1238E00BA9CB6 /* LeftViewController.xib */,
-				13830A0F19D1239E00BA9CB6 /* RightViewController.h */,
-				13830A1019D1239E00BA9CB6 /* RightViewController.m */,
-				13830A1119D1239E00BA9CB6 /* RightViewController.xib */,
-				13FB541A19D8480000DCCF19 /* WeiboCell.h */,
-				13FB541B19D8480000DCCF19 /* WeiboCell.m */,
-				13FB541D19D8481400DCCF19 /* WeiboView.h */,
-				13FB541E19D8481400DCCF19 /* WeiboView.m */,
-				1312AB8419E7A9D6001B877E /* WeiboTableView.h */,
-				1312AB8519E7A9D6001B877E /* WeiboTableView.m */,
-				13C0D5F419EE5CB4000D58B4 /* DetailViewController.h */,
-				13C0D5F519EE5CB4000D58B4 /* DetailViewController.m */,
-				13C0D5F619EE5CB4000D58B4 /* DetailViewController.xib */,
-				13C0D5F919EFA5BD000D58B4 /* CommentTableView.h */,
-				13C0D5FA19EFA5BD000D58B4 /* CommentTableView.m */,
-				13C0D5FE19EFB02A000D58B4 /* CommentCell.h */,
-				13C0D5FF19EFB02A000D58B4 /* CommentCell.m */,
-				13C0D5FC19EFA723000D58B4 /* CommentCell.xib */,
+				133EE2221A08878F00ED5B58 /* Controller */,
+				133EE2231A0887BD00ED5B58 /* View */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -808,9 +888,8 @@
 		13E9831D19CFF3A000947EE4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				13E9832019CFF55100947EE4 /* ProfileViewController.h */,
-				13E9832119CFF55100947EE4 /* ProfileViewController.m */,
-				13E9832219CFF55100947EE4 /* ProfileViewController.xib */,
+				133EE2241A08A72500ED5B58 /* Controller */,
+				133EE2251A08A73B00ED5B58 /* View */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -981,7 +1060,6 @@
 			files = (
 				1316688119D53453004D9254 /* tabbar_message_center_highlighted.png in Resources */,
 				1316688219D53453004D9254 /* tabbar_message_center_highlighted@2x.png in Resources */,
-				13BEFAEC19ED0C7200A12024 /* 37x-Checkmark.png in Resources */,
 				13E9832919CFF56700947EE4 /* DisCoverViewController.xib in Resources */,
 				1316686419D53453004D9254 /* navigationbar_back@2x.png in Resources */,
 				13E9832E19CFF57500947EE4 /* MoreViewController.xib in Resources */,
@@ -990,6 +1068,7 @@
 				1321C38419D153DE0015ED50 /* WeiboSDK.bundle in Resources */,
 				1389BD8819D3EF15000C7057 /* Themes.plist in Resources */,
 				1316687C19D53453004D9254 /* tabbar_home_highlighted@2x.png in Resources */,
+				13CCBE921A15AA4D004E34B3 /* 37x-Checkmark.png in Resources */,
 				1316687319D53453004D9254 /* tabbar_discover.png in Resources */,
 				138698A419D45F9100CD7D51 /* ThemesViewController.xib in Resources */,
 				1316685D19D53453004D9254 /* Icon@2x.png in Resources */,
@@ -997,6 +1076,7 @@
 				1316688A19D53453004D9254 /* tabbar_more_selected@2x.png in Resources */,
 				131668A519D53453004D9254 /* 后退.png in Resources */,
 				1316689019D53453004D9254 /* tabbar_profile_selected@2x.png in Resources */,
+				138665F01A1B6854003D47DE /* WebViewController.xib in Resources */,
 				13C0D5FD19EFA723000D58B4 /* CommentCell.xib in Resources */,
 				131668A219D53453004D9254 /* userinfo_header_separator@2x.png in Resources */,
 				13C0D5F819EE5CB4000D58B4 /* DetailViewController.xib in Resources */,
@@ -1070,11 +1150,13 @@
 				1316688019D53453004D9254 /* tabbar_message_center@2x.png in Resources */,
 				1316687B19D53453004D9254 /* tabbar_home_highlighted.png in Resources */,
 				1316685B19D53453004D9254 /* fontColor.plist in Resources */,
+				133EE2211A0886D700ED5B58 /* UserViewController.xib in Resources */,
 				1316689A19D53453004D9254 /* timeline_new_status_background@2x.png in Resources */,
 				1316687119D53453004D9254 /* tabbar_background.png in Resources */,
 				1316686519D53453004D9254 /* navigationbar_back_highlighted.png in Resources */,
 				1312AB7B19E7A49D001B877E /* blackArrow@2x.png in Resources */,
 				1316689319D53453004D9254 /* tableview_pulltorefresh_arrow.png in Resources */,
+				133EE22A1A08A77500ED5B58 /* UserInfoView.xib in Resources */,
 				1316686719D53453004D9254 /* navigationbar_background.png in Resources */,
 				1316687E19D53453004D9254 /* tabbar_home_selected@2x.png in Resources */,
 				1316685F19D53453004D9254 /* icon_detail@2x.png in Resources */,
@@ -1120,15 +1202,16 @@
 				13E982B019CFBC5000947EE4 /* AppDelegate.m in Sources */,
 				13CCCC4819D59F8200C9112A /* ThemesImageView.m in Sources */,
 				13CCCC4C19D66FDD00C9112A /* ThemesLabel.m in Sources */,
+				13CCBE931A15AA4D004E34B3 /* MBProgressHUD.m in Sources */,
 				13C5970519E6585D00268A13 /* NSString+URLEncoding.m in Sources */,
 				1389BD8619D3EEEC000C7057 /* ThemesManager.m in Sources */,
-				13BEFAED19ED0C7200A12024 /* MBProgressHUD.m in Sources */,
 				13E9831019CFE57F00947EE4 /* CustomCatagory.m in Sources */,
 				13FB541F19D8481400DCCF19 /* WeiboView.m in Sources */,
 				13E1A52C19D27A0400618EEB /* MainViewController.m in Sources */,
 				1312AB8319E7A548001B877E /* BaseTableView.m in Sources */,
 				13E982B319CFBC5000947EE4 /* Vweibo.xcdatamodeld in Sources */,
 				13830A1219D1239E00BA9CB6 /* RightViewController.m in Sources */,
+				133EE2281A08A76500ED5B58 /* UserInfoView.m in Sources */,
 				13AC5AB11A0118DA0010816E /* BrowModeViewController.m in Sources */,
 				13C0D60019EFB02A000D58B4 /* CommentCell.m in Sources */,
 				13E982E019CFC26100947EE4 /* WXHLGlobalUICommon.m in Sources */,
@@ -1136,14 +1219,19 @@
 				13E9830519CFCA1400947EE4 /* SDWebImageDownloader.m in Sources */,
 				13E9831519CFF32500947EE4 /* HomeViewController.m in Sources */,
 				1312AB8619E7A9D6001B877E /* WeiboTableView.m in Sources */,
+				133EE2201A0886D700ED5B58 /* UserViewController.m in Sources */,
+				1391102F1A09C9BC00B55A67 /* RectButton.m in Sources */,
+				138665EF1A1B6854003D47DE /* WebViewController.m in Sources */,
 				13C0D5F719EE5CB4000D58B4 /* DetailViewController.m in Sources */,
 				13F9D8E319D7B7AB000F9F68 /* WeiboModel.m in Sources */,
+				1358A8B41A1ADF150080DAB5 /* WXImageView.m in Sources */,
 				13E9830619CFCA1400947EE4 /* SDWebImageManager.m in Sources */,
 				13C5970B19E6CD3300268A13 /* RegexKitLite.m in Sources */,
 				13E9832D19CFF57500947EE4 /* MoreViewController.m in Sources */,
 				1312AB7E19E7A49D001B877E /* EGORefreshTableHeaderView.m in Sources */,
 				13830A0D19D1238E00BA9CB6 /* LeftViewController.m in Sources */,
 				138698A319D45F9100CD7D51 /* ThemesViewController.m in Sources */,
+				133EE21C1A087F8900ED5B58 /* UIView+Addtions.m in Sources */,
 				13E9830219CFCA1400947EE4 /* DDMenuController.m in Sources */,
 				13E9833419CFFA3300947EE4 /* BaseNavigationController.m in Sources */,
 				13E9832319CFF55100947EE4 /* ProfileViewController.m in Sources */,
