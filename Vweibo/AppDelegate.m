@@ -16,7 +16,6 @@
 @end
 
 @implementation AppDelegate
-@synthesize wbtoken;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -28,8 +27,8 @@
     //设置主题
     [self setTheme];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];  
-    MainViewController *rootView = [[MainViewController alloc] init];
-    _menuCtrol = [[DDMenuController alloc] initWithRootViewController:rootView];
+    _rootView = [[MainViewController alloc] init];
+    _menuCtrol = [[DDMenuController alloc] initWithRootViewController:_rootView];
     LeftViewController *leftView = [[LeftViewController alloc] init];
     RightViewController *rightView = [[RightViewController alloc] init];
     _menuCtrol.leftViewController = leftView;
@@ -156,76 +155,11 @@
 
 //重写 AppDelegate 的 handleOpenURL 和 openURL 方法
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WeiboSDK handleOpenURL:url delegate:_rootView];
 }
 
 -(BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return  [WeiboSDK handleOpenURL:url delegate:self];
-}
-
-
-#pragma mark - Weibo delegate
-/**
- 收到一个来自微博客户端程序的请求
- 
- 收到微博的请求后，第三方应用应该按照请求类型进行处理，处理完后必须通过 [WeiboSDK sendResponse:] 将结果回传给微博
- @param request 具体的请求对象
- */
-- (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
-    if ([request isKindOfClass:WBProvideMessageForWeiboRequest.class]) {
-        
-    }
-}
-
-/**
- 收到一个来自微博客户端程序的响应
- 
- 收到微博的响应后，第三方应用可以通过响应类型、响应的数据和 WBBaseResponse.userInfo 中的数据完成自己的功能
- @param response 具体的响应对象
- */
-- (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
-    if ([response isKindOfClass:WBSendMessageToWeiboResponse.class]) {
-        NSString *title = @"发送结果";
-        NSString *message = [NSString stringWithFormat:@"响应状态: %d\n响应UserInfo数据: %@\n原请求UserInfo数据: %@",(int)response.statusCode, response.userInfo, response.requestUserInfo];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        [alert show];
-    } else if ([response isKindOfClass:WBAuthorizeResponse.class]) {
-        NSString *title;
-        NSString *message = [NSString stringWithFormat:@"响应状态: %d\nresponse.userId: %@\nresponse.accessToken: %@\nresponse.expirationDate: %@\n响应UserInfo数据: %@\n原请求UserInfo数据: %@",(int)response.statusCode,[(WBAuthorizeResponse *)response userID], [(WBAuthorizeResponse *)response accessToken], [(WBAuthorizeResponse *)response expirationDate], response.userInfo, response.requestUserInfo];
-        
-        switch (response.statusCode) {
-            case WeiboSDKResponseStatusCodeSuccess:
-                title = @"授权成功";
-                break;
-            case WeiboSDKResponseStatusCodeAuthDeny:
-                title = @"授权失败";
-                break;
-            case WeiboSDKResponseStatusCodeUserCancelInstall:
-                title = @"取消安装";
-                break;
-            case WeiboSDKResponseStatusCodeUnsupport:
-                title = @"不支持请求";
-                break;
-            default:
-                title = @"未知操作";
-                break;
-        }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                        message:nil
-                                                       delegate:nil
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        NSLog(@"%@", message);
-        
-        [self setWbtoken:[(WBAuthorizeResponse *)response accessToken]];
-        [[NSUserDefaults standardUserDefaults] setObject:wbtoken forKey:kWbtoken];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        [alert show];
-    }
+    return  [WeiboSDK handleOpenURL:url delegate:_rootView];
 }
 
 @end

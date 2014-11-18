@@ -22,6 +22,7 @@
 @end
 
 @implementation MainViewController
+@synthesize wbtoken;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -83,13 +84,13 @@
     //隐藏默认tabbar
     self.tabBar.hidden = YES;
     
-    HomeViewController *homeVC = [[HomeViewController alloc]init];
+    _homeVC = [[HomeViewController alloc]init];
     MessageViewController *messageVC = [[MessageViewController alloc] init];
     ProfileViewController *profileVC = [[ProfileViewController alloc] init];
     DisCoverViewController *disCoverVC = [[DisCoverViewController alloc] init];
     MoreViewController *moreVC = [[MoreViewController alloc] init];
     
-    NSArray *views = @[homeVC, messageVC, profileVC, disCoverVC, moreVC];
+    NSArray *views = @[_homeVC, messageVC, profileVC, disCoverVC, moreVC];
     NSMutableArray *viewControllers = [NSMutableArray arrayWithCapacity:5];
     for (UIViewController *viewController in views) {
         BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:viewController];
@@ -197,10 +198,8 @@
     }];
     //判断是否是重复点击
     if (button.tag == self.selectedIndex) {
-        UINavigationController *navController = [self.viewControllers objectAtIndex:0];
-        HomeViewController *homeView = [navController.viewControllers objectAtIndex:0];
-       //调用下拉加载数据方法
-        [homeView refreshWeibo];
+        //调用下拉加载数据方法
+        [_homeVC refreshWeibo];
     }
     self.selectedIndex = button.tag;
 }
@@ -213,11 +212,79 @@
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
     //导航控制器子控制器的个数
-    int count = navigationController.viewControllers.count;
+    NSInteger count = navigationController.viewControllers.count;
     if(count == 2) {
         [self showTabbar:NO];
     } else if (count == 1) {
         [self showTabbar:YES];
+    }
+}
+
+
+#pragma mark - Weibo delegate
+/**
+ 收到一个来自微博客户端程序的请求
+ 
+ 收到微博的请求后，第三方应用应该按照请求类型进行处理，处理完后必须通过 [WeiboSDK sendResponse:] 将结果回传给微博
+ @param request 具体的请求对象
+ */
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
+    if ([request isKindOfClass:WBProvideMessageForWeiboRequest.class]) {
+        
+    }
+}
+
+/**
+ 收到一个来自微博客户端程序的响应
+ 
+ 收到微博的响应后，第三方应用可以通过响应类型、响应的数据和 WBBaseResponse.userInfo 中的数据完成自己的功能
+ @param response 具体的响应对象
+ */
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
+    if ([response isKindOfClass:WBSendMessageToWeiboResponse.class]) {
+        NSString *title = @"发送结果";
+        NSString *message = [NSString stringWithFormat:@"响应状态: %d\n响应UserInfo数据: %@\n原请求UserInfo数据: %@",(int)response.statusCode, response.userInfo, response.requestUserInfo];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+        [alert show];
+    } else if ([response isKindOfClass:WBAuthorizeResponse.class]) {
+        NSString *title;
+        NSString *message = [NSString stringWithFormat:@"响应状态: %d\nresponse.userId: %@\nresponse.accessToken: %@\nresponse.expirationDate: %@\n响应UserInfo数据: %@\n原请求UserInfo数据: %@",(int)response.statusCode,[(WBAuthorizeResponse *)response userID], [(WBAuthorizeResponse *)response accessToken], [(WBAuthorizeResponse *)response expirationDate], response.userInfo, response.requestUserInfo];
+        switch (response.statusCode) {
+            case WeiboSDKResponseStatusCodeSuccess:
+                title = @"登录成功";
+                //获取accessToken
+                [self setWbtoken:[(WBAuthorizeResponse *)response accessToken]];
+                //保存 accessToken 到本地
+                [[NSUserDefaults standardUserDefaults] setObject:wbtoken forKey:kWbtoken];
+                //同步 accessToken
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                //加载数据
+                [_homeVC loadWeiboData];
+                break;
+            case WeiboSDKResponseStatusCodeAuthDeny:
+                title = @"登录失败";
+                break;
+            case WeiboSDKResponseStatusCodeUserCancelInstall:
+                title = @"取消安装";
+                break;
+            case WeiboSDKResponseStatusCodeUnsupport:
+                title = @"不支持请求";
+                break;
+            default:
+                title = @"未知操作";
+                break;
+        }
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+//        NSLog(@"%@", message);
+        [alert show];
     }
 }
 

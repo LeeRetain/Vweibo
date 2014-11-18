@@ -18,12 +18,11 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (readonly, strong, nonatomic) MainViewController *rootView;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (retain, nonatomic) DDMenuController *menuCtrol;
-
-@property(strong, nonatomic) NSString *wbtoken;
 
 
 - (void)saveContext;

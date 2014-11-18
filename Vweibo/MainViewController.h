@@ -17,6 +17,10 @@
 @property(nonatomic) UIImageView *sliderView;
 @property(nonatomic) UIImageView *badgeView;
 
+@property(nonatomic) HomeViewController *homeVC;
+
+@property(strong, nonatomic) NSString *wbtoken;
+
 //隐藏消息图标
 - (void) showBadge:(BOOL) show;
 //隐藏tabbar
