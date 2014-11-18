@@ -34,15 +34,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //绑定微博帐号
-    UIBarButtonItem *bindItem = [[UIBarButtonItem alloc] initWithTitle:@"登录微博" style:UIBarButtonItemStyleBordered target:self action:@selector(bindAction:)];
+    UIBarButtonItem *bindItem = [[UIBarButtonItem alloc] initWithTitle:@"登录微博" style:UIBarButtonItemStyleBordered target:self action:@selector(bindAction)];
     self.navigationItem.rightBarButtonItem = bindItem;
     
     //注销微博帐号
-    UIBarButtonItem *logoutItem = [[UIBarButtonItem alloc] initWithTitle:@"注销" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction:)];
+    UIBarButtonItem *logoutItem = [[UIBarButtonItem alloc] initWithTitle:@"注销" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
     self.navigationItem.leftBarButtonItem = logoutItem;
     
     _tableView = [[WeiboTableView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight - 109) style:UITableViewStylePlain];
-    //设置下拉代理
+    //设置下拉上拉代理
     _tableView.eventDelegate =self;
     _tableView.hidden = YES;
     [self.view addSubview:_tableView];
@@ -51,6 +51,8 @@
     if(kAccessToken != nil) {
         //加载微博列表
         [self loadWeiboData];
+    } else  {
+        [self bindAction];
     }
     
 //    [self showHUD:@"正在加载…" isDim:YES];
@@ -155,7 +157,7 @@
 
 #pragma mark - Item actions
 //授权登录微博
--(void)bindAction:(UIBarButtonItem*) buttonItem {
+-(void)bindAction {
 
     //SSO 微博客户端授权认证
     WBAuthorizeRequest *request = [WBAuthorizeRequest request];
@@ -170,7 +172,7 @@
 }
 
 //解除绑定微博
--(void)logoutAction:(UIBarButtonItem *) buttonItem {
+-(void)logoutAction {
 //     AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
 //    NSString *accessToken = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:kWbtoken];
     [WeiboSDK logOutWithToken:kAccessToken delegate:self withTag:@"logOut"];
@@ -316,14 +318,15 @@
          [loadWeibos addObject:weiboModel];
      }
      
-     [self.weibos addObjectsFromArray:loadWeibos];
-     
      //更新上拉微博ID
-     if (_weibos.count >0) {
+     if (loadWeibos.count > 0) {
          WeiboModel *footerWeibo = [_weibos lastObject];
          self.footerWeioboId = [footerWeibo.weiboId stringValue];
+         [loadWeibos removeObjectAtIndex:0];
 //         NSLog(@"footerWeioboId %@",self.footerWeioboId);
      }
+     
+     [self.weibos addObjectsFromArray:loadWeibos];
   
      //判读是否还有下一页
      if(statuesArr.count >= 20 ) {
@@ -331,13 +334,14 @@
      } else {
          self.tableView.isMore = NO;
      }
-         
+     
      self.tableView.data =  self.weibos;
      //刷新数据
      [self.tableView reloadData];
  }
 
 -(void)refreshWeibo {
+
     //调用下拉
     [self.tableView refreshData];
     //下拉加载数据
@@ -360,9 +364,7 @@
         [self pullDownLoadRequestData:result];
     } else if ([tag isEqualToString:@"pullUpLoadData"]) {
         [self pullUpLoadRequestData:result];
-    }
-    
-    else if( [tag isEqualToString:@"logOut"]) {
+    } else if( [tag isEqualToString:@"logOut"]) {
         NSString *title = nil;
         UIAlertView *alert = nil;
         
@@ -432,6 +434,5 @@
     
     [self.navigationController pushViewController:detailView animated:YES];
 }
-
 
 @end

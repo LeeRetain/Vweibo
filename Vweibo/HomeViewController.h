@@ -20,6 +20,7 @@
 @property (nonatomic) NSString *footerWeioboId;
 @property(nonatomic) NSMutableArray *weibos;
 
--(void)refreshWeibo;
+-(void)refreshWeibo;                //刷新微博数据
+-(void) loadWeiboData;              //加载微博信息
 
 @end

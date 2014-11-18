@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WebViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="5UG-j8-yHi" id="ZQv-cX-O0d"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5UG-j8-yHi">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="5Ci-Fz-0nw"/>
+                    </connections>
+                </webView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Elj-CX-Eup">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <items>
+                        <barButtonItem style="plain" id="0Lo-tY-WYU">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vmG-fI-8Eu">
+                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="后退.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="-1" eventType="touchUpInside" id="dYp-0G-Scr"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Knn-6P-Fah"/>
+                        <barButtonItem style="plain" id="GIM-yI-7AN">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="s6w-8t-v8D">
+                                <rect key="frame" x="56" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="刷新.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goForward:" destination="-1" eventType="touchUpInside" id="G5q-Yk-JMH"/>
+                                    <action selector="reload:" destination="-1" eventType="touchUpInside" id="68b-YA-3Rc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Otd-r0-xI1"/>
+                        <barButtonItem image="前进.png" style="plain" id="YzV-vx-nwA">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O2D-un-bgo">
+                                <rect key="frame" x="96" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="前进.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goForward:" destination="-1" eventType="touchUpInside" id="gA0-Jc-iy9"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Elj-CX-Eup" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3Cx-1M-fdP"/>
+                <constraint firstAttribute="trailing" secondItem="Elj-CX-Eup" secondAttribute="trailing" id="ATg-VK-Mfy"/>
+                <constraint firstItem="5UG-j8-yHi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FDe-Qb-wGg"/>
+                <constraint firstAttribute="bottom" secondItem="5UG-j8-yHi" secondAttribute="bottom" id="JUo-Fu-FhJ"/>
+                <constraint firstAttribute="bottom" secondItem="Elj-CX-Eup" secondAttribute="bottom" id="Ps3-NA-CBj"/>
+                <constraint firstAttribute="trailing" secondItem="5UG-j8-yHi" secondAttribute="trailing" id="cQQ-JP-5VY"/>
+                <constraint firstItem="5UG-j8-yHi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eMI-df-szk"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="刷新.png" width="30" height="30"/>
+        <image name="前进.png" width="30" height="30"/>
+        <image name="后退.png" width="30" height="30"/>
+    </resources>
+</document>

@@ -12,6 +12,7 @@
 #import "UIViewExt.h"
 #import "CommentModel.h"
 #import "CommentTableView.h"
+#import "UserViewController.h"
 
 @interface DetailViewController ()
 
@@ -50,7 +51,10 @@
     //设置圆角为5
     self.userImageView.layer.cornerRadius = 5;
     self.userImageView.layer.masksToBounds = YES;
-    [self.userImageView setImageWithURL:[NSURL URLWithString:userImageURL]];
+    self.userImageView.userInteractionEnabled = YES;
+    [_userImageView setImageWithURL:[NSURL URLWithString:userImageURL]];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    [_userImageView addGestureRecognizer:singleTap];
     //用户昵称
     self.nickLabel.text = _weiboModel.userModel.screen_name;
 //    self.nickLabel.textAlignment = NSTextAlignmentCenter;
@@ -152,7 +156,7 @@
 //调用header的显示
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     return [_tableView tableView:tableView viewForHeaderInSection:section];
-}
+} 
 
 //调用header的高度
 -(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -161,6 +165,15 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
+}
+
+#pragma mark - Actions
+- (void) handleSingleTap:(UITapGestureRecognizer *) gestureRecognizer {
+    NSString *userName = self.weiboModel.userModel.screen_name;
+    UserViewController *viewCtr = [[UserViewController alloc] init];
+    viewCtr.userName = userName;
+    [self.navigationController pushViewController:viewCtr animated:YES];
+    NSLog(@"%@", self.navigationController);
 }
 
 @end
