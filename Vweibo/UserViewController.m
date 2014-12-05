@@ -68,7 +68,7 @@
 
 #pragma mark - load Data
 -(void) loadUserInfoData {
-    //加载数据提示
+    //load data hint
     [self loadTableViewUI];
     
     if (self.userName.length == 0) {

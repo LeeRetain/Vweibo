@@ -13,7 +13,7 @@
 @interface UserViewController : ViewController<UITableViewEventDelegate>
 
 @property(nonatomic, copy) NSString *userName;
-@property NSMutableArray *requests;     //set network cancel Connect
+@property(nonatomic) NSMutableArray *requests;     //set network cancel Connect
 @property(nonatomic, retain) UserInfoView *userInfo;
 @property (weak, nonatomic) IBOutlet WeiboTableView *tableView;
 @property(nonatomic) NSString *topId;
