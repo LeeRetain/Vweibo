@@ -17,6 +17,7 @@
 #import "UIView+Addtions.h"
 #import "UserViewController.h"
 #import "WebViewController.h"
+#import "TopicViewController.h"
 
 @implementation WeiboView
 
@@ -322,7 +323,12 @@
     } else if ([absoluteString hasPrefix:@"topic"]) {
         NSString *strUrl = [url host];
         strUrl = [strUrl URLDecodedString];
+        strUrl = [strUrl substringFromIndex:1];
+        strUrl = [strUrl substringToIndex:(strUrl.length-1)];
         NSLog(@"topic-->>>%@",strUrl);
+        TopicViewController *topicViewController = [[TopicViewController alloc] init];
+        topicViewController.userName = strUrl;
+        [self.viewController.navigationController pushViewController:topicViewController animated:YES];
     }
 }
 
