@@ -94,11 +94,11 @@
 }
 
 //设置隐藏加载提示
--(void) hiddenHUD {
+- (void) hiddenHUD {
     [self.hud hide:YES];
 }
 
--(AppDelegate *) appDelegate {
+- (AppDelegate *) appDelegate {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     return appDelegate;
 }

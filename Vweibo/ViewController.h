@@ -24,7 +24,7 @@
 -(void) showHUDComplete:(NSString *) title afterDelay:(NSInteger) delay;
 -(void) hiddenHUD;
 
-- (AppDelegate *) appDelegate;
+- (AppDelegate *)appDelegate;
 
 @end
 
