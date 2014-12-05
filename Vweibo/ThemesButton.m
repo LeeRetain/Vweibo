@@ -58,6 +58,11 @@
     //获取图片
     UIImage *image = [themesManager getThemeImage:_imageName];
     UIImage *highlightImage = [themesManager getThemeImage:_highlightImageName];
+    
+    //set image Stretch
+    image = [image stretchableImageWithLeftCapWidth:self.leftCapWidth topCapHeight:self.topCapHeight];
+    highlightImage = [highlightImage stretchableImageWithLeftCapWidth:self.leftCapWidth topCapHeight:self.topCapHeight];
+    
     //设置图片
     [self setImage:image forState:UIControlStateNormal];
     [self setImage:highlightImage forState:UIControlStateHighlighted];
@@ -65,6 +70,11 @@
     //获取背景图片
     UIImage *backgroundImage = [themesManager getThemeImage:_backgroundImageName];
     UIImage *backgroundHighlightImage = [themesManager getThemeImage:_backgroundHighlightImageName];
+    
+    //set Image Stretch
+    backgroundImage = [backgroundImage stretchableImageWithLeftCapWidth:self.leftCapWidth topCapHeight:self.topCapHeight];
+    backgroundHighlightImage = [backgroundHighlightImage stretchableImageWithLeftCapWidth:self.leftCapWidth topCapHeight:self.topCapHeight];
+    
     //设置背景图片
     [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
     [self setBackgroundImage:backgroundHighlightImage forState:UIControlStateHighlighted];

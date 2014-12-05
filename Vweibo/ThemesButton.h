@@ -17,6 +17,9 @@
 @property(nonatomic, copy) NSString *backgroundImageName;
 //高亮状态下的背景图片名称
 @property(nonatomic, copy) NSString *backgroundHighlightImageName;
+//这是图片拉伸的位置
+@property(nonatomic, assign) int leftCapWidth; //crosswise stretch
+@property(nonatomic, assign) int topCapHeight; //length wise direction stretch
 
 //初始化
 - (id)initWithImage:(NSString *) imageName highlighted:(NSString *) highlightImageName;

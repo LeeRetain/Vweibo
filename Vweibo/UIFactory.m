@@ -32,4 +32,20 @@
     return labelColor;
 }
 
+// Create Navigation Button
++ (UIButton *) createNavigationButton:(CGRect) frame
+                                title:(NSString *)title
+                               target:(id) target
+                               action:(SEL)action {
+    ThemesButton *button = [self createWithImage:@"navigationbar_button_background" higtlightedImage:@"navigationbar_button_delete_background"];
+    button.frame = frame;
+    [button setTitle:title forState:UIControlStateNormal];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:13.0f];
+    button.leftCapWidth = 5;
+    
+    return button;
+}
+
 @end
