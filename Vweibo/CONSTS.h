@@ -19,6 +19,7 @@
 #define KUserInfoURI @"https://api.weibo.com/2/users/show.json"         //获取用户信息
 #define kUserWiboURI @"https://api.weibo.com/2/statuses/user_timeline.json"     //获取用户最新发表的微博列表
 #define kFriendsWeiboURI @"https://api.weibo.com/2/statuses/friends_timeline.json"          //获取微博列表
+#define kTopicWeiboURI @"https://api.weibo.com/2/search/topics.json"    //搜索某一话题下的微博
 
 #define kWbtoken @"kWbtoken"              //微博token
 
@@ -76,4 +77,8 @@
 #define kBrowMode   @"kBrowMode"    //UserDefault key
 #define kReloadWeiboTableNotification @"kReloadWeiboTableNotification"      //Notification Key
 
+//show status bar loading…
+#define kAPPLICATIONNETWORKSHOW [UIApplication sharedApplication].networkActivityIndicatorVisible = YES
+//hide status bar loading…
+#define kAPPLICATIONNETWORKHIDE [UIApplication sharedApplication].networkActivityIndicatorVisible = NO
 #endif
