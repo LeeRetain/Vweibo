@@ -19,6 +19,8 @@
 @property (nonatomic) NSString *topWeioboId;
 @property (nonatomic) NSString *footerWeioboId;
 @property(nonatomic) NSMutableArray *weibos;
+@property(nonatomic) UIBarButtonItem *logoutItem;       //注销button
+@property(nonatomic) UIBarButtonItem *bindItem;     //登录button
 
 -(void)refreshWeibo;                //刷新微博数据
 -(void) loadWeiboData;              //加载微博信息

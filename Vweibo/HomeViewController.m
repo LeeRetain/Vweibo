@@ -33,13 +33,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    //绑定微博帐号
-    UIBarButtonItem *bindItem = [[UIBarButtonItem alloc] initWithTitle:@"登录微博" style:UIBarButtonItemStyleBordered target:self action:@selector(bindAction)];
-    self.navigationItem.rightBarButtonItem = bindItem;
+
+    //判断是否本地有AccessToke
+    if(kAccessToken != nil) {
+        //加载微博列表
+        [self loadWeiboData];
+        //注销微博帐号
+        _logoutItem = [[UIBarButtonItem alloc] initWithTitle:@"注销" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
+        self.navigationItem.rightBarButtonItem = _logoutItem;
+    } else  {
+        //绑定微博帐号
+        _bindItem = [[UIBarButtonItem alloc] initWithTitle:@"登录微博" style:UIBarButtonItemStyleBordered target:self action:@selector(bindAction)];
+        self.navigationItem.rightBarButtonItem = _bindItem;
     
-    //注销微博帐号
-    UIBarButtonItem *logoutItem = [[UIBarButtonItem alloc] initWithTitle:@"注销" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutAction)];
-    self.navigationItem.leftBarButtonItem = logoutItem;
+        [self bindAction];
+    }
     
     _tableView = [[WeiboTableView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight - 109) style:UITableViewStylePlain];
     //设置下拉上拉代理
@@ -47,13 +55,6 @@
     _tableView.hidden = YES;
     [self.view addSubview:_tableView];
     
-    //判断是否本地有AccessToke
-    if(kAccessToken != nil) {
-        //加载微博列表
-        [self loadWeiboData];
-    } else  {
-        [self bindAction];
-    }
     
 //    [self showHUD:@"正在加载…" isDim:YES];
     
@@ -168,6 +169,7 @@
                          @"Other_Info_2": @[@"obj1", @"obj2"],
                          @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
     [WeiboSDK sendRequest:request];
+    self.navigationItem.rightBarButtonItem = _logoutItem;
     
 }
 
@@ -175,6 +177,8 @@
 -(void)logoutAction {
 //     AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
 //    NSString *accessToken = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:kWbtoken];
+    self.navigationItem.rightBarButtonItem = _bindItem;
+    
     [WeiboSDK logOutWithToken:kAccessToken delegate:self withTag:@"logOut"];
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kWbtoken];
     [[NSUserDefaults standardUserDefaults] synchronize];

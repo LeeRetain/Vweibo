@@ -7,6 +7,7 @@
 //
 
 #import "WebViewController.h"
+#import "CONSTS.h"
 
 @interface WebViewController ()
 
@@ -38,8 +39,8 @@
     [_webView loadRequest:request];
     self.title = @"loading…";
 
-    //status bar loading…
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //show status bar loading…
+    kAPPLICATIONNETWORKSHOW;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,13 +49,23 @@
 }
 
 #pragma mark - Actions
+//Go Back Button Action
 - (IBAction)goBack:(id)sender {
+    if ([_webView canGoBack]) {
+        [_webView goBack];
+    }
 }
 
+//Go reload Button Action
 - (IBAction)reload:(id)sender {
+    [_webView reload];
 }
 
+//GO Forward Button Action
 - (IBAction)goForward:(id)sender {
+    if ([_webView canGoForward]) {
+        [_webView goForward];
+    }
 }
 
 #pragma mark - UIWebView  Delegate
@@ -63,13 +74,15 @@
 //}
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    
+    //show load status
+    [self showLoading:YES];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    
-    //status bar loading…
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //hide load status
+    [self showLoading:NO];
+    //hide status bar loading…
+    kAPPLICATIONNETWORKHIDE;
     
     //get web titie
     NSString *title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];

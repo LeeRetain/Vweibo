@@ -78,6 +78,7 @@
                 <constraint firstAttribute="trailing" secondItem="5UG-j8-yHi" secondAttribute="trailing" id="cQQ-JP-5VY"/>
                 <constraint firstItem="5UG-j8-yHi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eMI-df-szk"/>
             </constraints>
+            <point key="canvasLocation" x="339" y="336"/>
         </view>
     </objects>
     <resources>
